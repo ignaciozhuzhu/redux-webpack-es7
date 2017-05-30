@@ -36,5 +36,13 @@ class Counter extends Component {
       </p>)
   }
 }
-
-export default Counter
+class C extends Component {
+  render() {
+    return (
+      <div>
+        <Counter {...this.props} />
+      </div>
+    )
+  }
+}
+export { Counter, C }

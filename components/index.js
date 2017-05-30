@@ -1,6 +1,18 @@
-import Hello from './Hello/index.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+/*import Hello from './Hello/index.js';
 import World from './World/index.jsx';
 import Counter from './Counter/index.js'
+import Todo from './Todo/index.js'
+import TodosWithUndo from './todos-with-undo/index.js'*/
+//import TodoMvc from './todomvc/index.js'
+import A from './shoppingcart/index.js'
+/*const App = () => (
+  <div>
+    <Hello />
+    <World />
+  </div>
+)
 
-import './Hello/index.less';
-import './World/index.less';
+ReactDOM.render(<App />, document.getElementById('helloworld'));*/

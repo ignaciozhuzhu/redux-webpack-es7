@@ -1,4 +1,5 @@
 import counter from './index'
+counter.state = 1
 
 describe('reducers', () => {
   describe('counter', () => {
