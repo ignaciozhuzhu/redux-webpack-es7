@@ -29,6 +29,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(
-  mapStateToProps,
-  { checkout }
+  mapStateToProps, { checkout }
 )(CartContainer)

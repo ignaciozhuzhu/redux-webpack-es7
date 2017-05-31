@@ -18,7 +18,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.(js|jsx)$/,
-      loader: "babel",
+      loader: "babel-loader",
       exclude: /node_modules/
     }, {
       test: /\.(less|css)$/,
@@ -27,6 +27,6 @@ module.exports = {
       test: /\.(png|jpg)$/,
       loader: 'url?limit=50000'
     }],
-  },
+  }
 
 }

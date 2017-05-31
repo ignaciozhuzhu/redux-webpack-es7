@@ -12,6 +12,7 @@ const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
+//console.log(middleware)
 
 const store = createStore(
   reducer,

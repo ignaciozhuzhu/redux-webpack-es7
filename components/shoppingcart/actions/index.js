@@ -8,7 +8,6 @@ const receiveProducts = products => ({
 
 export const getAllProducts = () => dispatch => {
   shop.getProducts(products => {
-    //console.log(products)
     dispatch(receiveProducts(products))
   })
 }

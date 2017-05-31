@@ -8,9 +8,11 @@ const TIMEOUT = 100
 export default {
   getProducts: function(cb, timeout) {
     setTimeout(function() {
-      //debugger
       cb(_products), timeout || TIMEOUT
     })
   },
-  buyProducts: (payload, cb, timeout) => setTimeout(() => cb(), timeout || TIMEOUT)
+  buyProducts: function(payload, cb, timeout) {
+    //log(payload)
+    setTimeout(() => cb(), timeout || TIMEOUT)
+  }
 }
