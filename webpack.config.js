@@ -22,10 +22,10 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.(less|css)$/,
-      loader: 'style!css!less'
+      loader: 'style-loader!css-loader!less-loader'
     }, {
       test: /\.(png|jpg)$/,
-      loader: 'url?limit=50000'
+      loader: 'url-loader?limit=50000'
     }],
   }
 

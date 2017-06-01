@@ -16,7 +16,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.28.4",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "prop-types": "^15.5.10",
@@ -25,13 +25,16 @@
     "react-redux": "^5.0.5",
     "redux": "^3.6.0",
     "redux-undo": "^0.6.1",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.18.1",
     "todomvc-app-css": "^2.1.0",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.8"
   },
   "dependencies": {
+    "loader": "^2.1.1",
+    "rc-pagination": "^1.9.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "to-string-loader": "^1.1.5",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.18.0"

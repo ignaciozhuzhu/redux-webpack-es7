@@ -1,11 +1,13 @@
 import { connect } from 'react-redux'
 import TodoList from '../components/TodoList'
-import getVisibleTodos from '../reducers/getVisibleTodos'
+//import getVisibleTodos from '../reducers/getVisibleTodos'
 
 const mapStateToProps = function(state) {
-  debugger
+  //debugger
+  log(state)
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+    todos: state.todos
+      // todos: getVisibleTodos(state.todos, state.visibilityFilter)
   }
 }
 
