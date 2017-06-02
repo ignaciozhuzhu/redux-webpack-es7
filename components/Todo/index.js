@@ -15,11 +15,10 @@ if (process.env.NODE_ENV !== 'production') {
 window.log = window.console.log;
 
 const store = createStore(
-  reducer,
-  applyMiddleware(...middleware)
-)
-
-store.dispatch()
+    reducer,
+    applyMiddleware(...middleware)
+  )
+  //store.dispatch()
 
 render(
   <Provider store={store}>

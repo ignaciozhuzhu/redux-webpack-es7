@@ -1,6 +1,7 @@
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
+      //  debugger
       return {
         id: action.id,
         text: action.text,
@@ -23,11 +24,12 @@ const todo = (state, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      //console.log(action)
       return [
         ...state,
         todo(undefined, action)
       ]
+    case 'GET_DATA':
+      return action.data
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)

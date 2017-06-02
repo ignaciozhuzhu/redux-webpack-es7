@@ -22,14 +22,14 @@ import shop from '../api/shop'
 //import * as types from '../constants/ActionTypes'
 
 const receiveProducts = products => ({
-  type: 'ADD_TODO',
-  id: 991,
-  text: '123',
-  important: true
+  type: 'GET_DATA',
+  data: products
 })
 
 export const getAllProducts = () => dispatch => {
   shop.getProducts(products => {
+    //debugger
     dispatch(receiveProducts(products))
+      // dispatch(receiveProducts(products))
   })
 }

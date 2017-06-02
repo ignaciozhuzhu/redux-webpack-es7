@@ -11,8 +11,10 @@ import Todo from './Todo/index.js'
 import TodosWithUndo from './todos-with-undo/index.js'*/
 //import TodoMvc from './todomvc/index.js'
 //import A from './Todo_Mine/index.js'
-import A from './Add_List/index.js'
+//import A from './Add_List/index.js'
 //import A from './shoppingcart/index.js'
+//import Todo from './Todo/index.js'
+import Add_List from './Add_List/index.js'
 window.log = window.console.log;
 /*const App = () => (
   <div>

@@ -25,7 +25,7 @@ const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       {
-        //  debugger
+        // debugger
         return [
           ...state,
           todo(undefined, action)
