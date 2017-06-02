@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import TodoList from '../components/TodoList'
 
-const getVisibleTodos = (todos, filter, junmpmy) => {
+const getVisibleTodos = (todos, filter, page) => {
   // debugger
   switch (filter) {
     case 'SHOW_ALL':
@@ -12,15 +12,14 @@ const getVisibleTodos = (todos, filter, junmpmy) => {
     case 'SHOW_ACTIVE':
       return todos.filter(t => !t.important)
     case 'SHOW_PAGE':
-      // debugger
-      return todos.filter(t => t.current == junmpmy)
+      return todos.filter(t => t.current == page)
     default:
       throw new Error('Unknown filter: ' + filter)
   }
 }
 
 const mapStateToProps = (state) => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter, state.junmpmy),
+  todos: getVisibleTodos(state.todos, state.visibilityFilter, state.jumpPage),
 })
 
 const mapDispatchToProps = {

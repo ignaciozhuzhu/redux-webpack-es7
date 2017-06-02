@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-//import { setVisibilityFilter } from '../actions'
-//import Link from '../components/Link'
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 
@@ -10,36 +8,35 @@ const Pager = (total) => (
   <div>
     Show:
     {" "}
-    <Pagination2 filter="SHOW_PAGE" />
+    <PaginationF filter="SHOW_PAGE" />
   </div>
 )
 
-const mapStateToProps3 = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    current: state.junmpmy
+    current: state.jumpPage
   }
 }
 
-const mapDispatchToProps3 = (dispatch, ownProps) => {
-
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: (aa) => {
-      dispatch(setVisibilityFilter44(aa, ownProps.filter))
+    onClick: (current) => {
+      dispatch(setVisibilityFilter(current, ownProps.filter))
     }
   }
 }
-const setVisibilityFilter44 = (current, filter) => ({
+const setVisibilityFilter = (current, filter) => ({
   type: 'SET_VISIBILITY_FILTER',
   filter,
   current
 })
 
-let Pagination2 = function({ onClick, current }) {
-  //debugger
+let PaginationF = function({ onClick, current }) {
   return (
     <Pagination onChange={onClick.bind()} current={current} total={25} />
   )
 }
-Pagination2 = connect(mapStateToProps3, mapDispatchToProps3)(Pagination2)
+
+PaginationF = connect(mapStateToProps, mapDispatchToProps)(PaginationF)
 
 export default Pager

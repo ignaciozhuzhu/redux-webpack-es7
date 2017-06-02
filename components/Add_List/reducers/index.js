@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
-import junmpmy from './junmpmy'
+import jumpPage from './jumpPage'
 
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
-  junmpmy
+  jumpPage
 })
 
 export default todoApp
