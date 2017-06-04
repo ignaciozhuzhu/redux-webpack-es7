@@ -1,4 +1,4 @@
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
+const visibilityFilter = (state = 'SHOW_PAGE', action) => {
   //debugger
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':

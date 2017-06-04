@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import { pageSize } from '../conf.js'
 
-let AddTodo = ({ dispatch }) => {
+let AddTodo = ({ dispatch, page }) => {
   let input
 
   return (
@@ -12,12 +13,16 @@ let AddTodo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addTodo(input.value))
+        //debugger
+        dispatch(addTodo(input.value, page))
         input.value = ''
       }}>
         <input ref={node => {
-          node.focus()
-          input = node
+          //debugger
+          if(node){
+            node.focus()
+            input = node
+          }
         }} />
         <button type="submit">
           添加
@@ -26,6 +31,14 @@ let AddTodo = ({ dispatch }) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
+
+const mapStateToProps = (state) => {
+  //debugger
+  return {
+    page: parseInt(state.todos.length / pageSize) + 1
+  }
+}
+
+AddTodo = connect(mapStateToProps)(AddTodo)
 
 export default AddTodo

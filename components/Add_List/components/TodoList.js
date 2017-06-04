@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 //import Todo from './Todo'
 
 const TodoList = ({ todos, onTodoClick }) => {
-  // debugger
-  //if (todos.length > 0)
   return (<ul>
-
-     
     { 
        todos.map(todo =>
       <Todo
@@ -24,7 +20,8 @@ TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     important: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    current: PropTypes.number.isRequired
   }).isRequired).isRequired,
   onTodoClick: PropTypes.func.isRequired
 }
@@ -39,7 +36,8 @@ const Todo = ({ onClick, important, text }) => {
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   important: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  current: PropTypes.number.isRequired
 }
 
 export default TodoList

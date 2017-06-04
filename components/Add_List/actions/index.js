@@ -1,10 +1,11 @@
 let nextTodoId = 0
-export const addTodo = (text) => {
+export const addTodo = (text, page) => {
   //console.log(nextTodoId);
   return {
     type: 'ADD_TODO',
     id: nextTodoId++,
-    text
+    text,
+    page: page
   }
 }
 
@@ -24,6 +25,12 @@ import shop from '../api/shop'
 const receiveProducts = products => ({
   type: 'GET_DATA',
   data: products
+})
+
+const receiveProducts1Page = products => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_PAGE',
+  current: 1
 })
 
 export const getAllProducts = () => dispatch => {

@@ -1,9 +1,14 @@
 const jumpPage = (state = [], action = {}) => {
-  //debugger
+  // debugger
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       {
         return action.current
+      }
+    case 'ADD_TODO':
+      {
+        //debugger
+        return action.page
       }
     default:
       return 1

@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
+import { pageSize } from '../conf.js'
 
 const Pager = (total) => (
-  <div>
-    Show:
-    {" "}
-    <PaginationF filter="SHOW_PAGE" />
-  </div>
+  <PaginationF filter="SHOW_PAGE" />
 )
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   return {
-    current: state.jumpPage
+    current: state.jumpPage,
+    total: state.todos.length
   }
 }
 
@@ -31,9 +30,9 @@ const setVisibilityFilter = (current, filter) => ({
   current
 })
 
-let PaginationF = function({ onClick, current }) {
+let PaginationF = function({ onClick, current, total }) {
   return (
-    <Pagination onChange={onClick.bind()} current={current} total={25} />
+    <Pagination onChange={onClick.bind()} current={current} total={total} pageSize={pageSize} />
   )
 }
 
