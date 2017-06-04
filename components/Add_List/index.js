@@ -16,6 +16,8 @@ const store = createStore(
   reducer,
   applyMiddleware(...middleware)
 )
+
+//获取接口数据列表
 store.dispatch(getAllProducts())
 
 render(

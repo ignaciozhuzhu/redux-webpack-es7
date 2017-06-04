@@ -5,9 +5,11 @@ import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import { pageSize } from '../conf.js'
 
-const Pager = (total) => (
-  <PaginationF filter="SHOW_PAGE" />
-)
+let PaginationF = ({ onClick, current, total }) => {
+  return (
+    <Pagination onChange={onClick.bind()} current={current} total={total} pageSize={pageSize} />
+  )
+}
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
@@ -30,12 +32,9 @@ const setVisibilityFilter = (current, filter) => ({
   current
 })
 
-let PaginationF = function({ onClick, current, total }) {
-  return (
-    <Pagination onChange={onClick.bind()} current={current} total={total} pageSize={pageSize} />
-  )
-}
-
 PaginationF = connect(mapStateToProps, mapDispatchToProps)(PaginationF)
 
+const Pager = () => (
+  <PaginationF filter="SHOW_PAGE" />
+)
 export default Pager
