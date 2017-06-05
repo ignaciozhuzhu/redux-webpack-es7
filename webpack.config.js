@@ -5,10 +5,13 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(__dirname, './components/index.js');
 var BUILD_PATH = path.resolve(__dirname, './build');
 
+//API代理地址,私有.
+var server = require('./conf.js')
+
 module.exports = {
   entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
+    /*    'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:8080',*/
     APP_PATH
   ],
   output: {
@@ -27,6 +30,22 @@ module.exports = {
       test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=50000'
     }],
-  }
+  },
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    contentBase: './build',
+    port: 8080,
+    stats: { colors: true },
+
+    proxy: {
+      '/api': {
+        target: server,
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true
+      }
+    }
+  },
 
 }

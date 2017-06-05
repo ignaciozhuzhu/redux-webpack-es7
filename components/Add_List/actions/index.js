@@ -22,6 +22,44 @@ export const toggleTodo = (id) => ({
 import shop from '../api/shop'
 //import * as types from '../constants/ActionTypes'
 
+const serviceurl = "http://localhost:8080/api/"
+import { fetch_get } from '../../../lib/common.js';
+import 'whatwg-fetch'
+var login2 = {
+  "mobile": "13569453581",
+  "password": "123456",
+  "role": "3",
+};
+var login = function() {
+  fetch(serviceurl + "site/userLogin", {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(login2)
+    }).then(response => response.json())
+    .then(dt => {
+      console.log("login" + JSON.stringify(dt));
+      if (dt.status == "success") {
+        //debugger
+      } else if (dt.status == "error") {
+        toast.show(dt.message);
+        return;
+      }
+    })
+    .catch(xhr => toast.show(xhr.responseJSON ? xhr.responseJSON : xhr.message))
+}
+login();
+
+let data = {
+  currentPage: 1
+}
+fetch_get(serviceurl + "patient/listHosPatientByPage", data).then(response => response.json())
+  .then(dt => {
+    console.table(dt)
+  })
+  .catch(xhr => toast.show(xhr.responseJSON ? xhr.responseJSON : xhr.message))
+  //url: serviceurl + "patient/listHosPatientByPage",
+
 const receiveProducts = products => ({
   type: 'GET_DATA',
   data: products
