@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './Hello/index.js';
-import World from './World/index.jsx';
+//import Hello from './Hello/index.js';
+//import World from './World/index.jsx';
 
 /*import Hello from './Hello/index.js';
 import World from './World/index.jsx';
@@ -14,8 +14,10 @@ import TodosWithUndo from './todos-with-undo/index.js'*/
 //import A from './Add_List/index.js'
 //import A from './shoppingcart/index.js'
 //import Todo from './Todo/index.js'
-import Add_List from './Add_List/index.js'
+//import Add_List from './Add_List/index.js'
+import ReactMobileComponents from './React-Mobile-Components/index.js'
 window.log = window.console.log;
+ReactDOM.render(<ReactMobileComponents />, document.getElementById('root'));
 /*const App = () => (
   <div>
     <Hello />

@@ -37,6 +37,7 @@ module.exports = {
     inline: true,
     contentBase: './build',
     port: 8080,
+    host: '192.168.2.135',
     stats: { colors: true },
 
     proxy: {
